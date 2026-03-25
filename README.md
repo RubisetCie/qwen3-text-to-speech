@@ -15,10 +15,6 @@
 
 We release **Qwen3-TTS**, a series of powerful speech generation capabilities developed by Qwen, offering comprehensive support for voice clone, voice design, ultra-high-quality human-like speech generation, and natural language-based voice control. It provides developers and users with the most extensive set of speech generation features available.
 
-
-## News
-* 2026.1.22: 🎉🎉🎉 We have released [Qwen3-TTS](https://huggingface.co/collections/Qwen/qwen3-tts) series (0.6B/1.7B) based on Qwen3-TTS-Tokenizer-12Hz. Please check our [blog](https://qwen.ai/blog?id=qwen3tts-0115)!
-
 ## Contents <!-- omit in toc -->
 
 - [Overview](#overview)
@@ -38,7 +34,6 @@ We release **Qwen3-TTS**, a series of powerful speech generation capabilities de
 - [vLLM Usage](#vllm-usage)
 - [Fine Tuning](#fine-tuning)
 - [Evaluation](#evaluation)
-- [Citation](#citation)
 
 ## Overview
 ### Introduction
@@ -121,7 +116,7 @@ pip install -U qwen-tts
 If you want to develop or modify the code locally, install from source in editable mode.
 
 ```bash
-git clone https://github.com/QwenLM/Qwen3-TTS.git
+git clone https://github.com/RubisetCie/qwen3-text-to-speech.git
 cd Qwen3-TTS
 pip install -e .
 ```
@@ -283,7 +278,7 @@ sf.write("output_voice_clone_1.wav", wavs[0], sr)
 sf.write("output_voice_clone_2.wav", wavs[1], sr)
 ```
 
-For more examples of reusable voice clone prompts, batch cloning, and batch inference, please refer to the [example codes](https://github.com/QwenLM/Qwen3-TTS/blob/main/examples/test_model_12hz_base.py). With those examples and the `generate_voice_clone` function description, you can explore more advanced usage patterns.
+For more examples of reusable voice clone prompts, batch cloning, and batch inference, please refer to the [example codes](https://github.com/RubisetCie/qwen3-text-to-speech/blob/main/examples/test_model_12hz_base.py). With those examples and the `generate_voice_clone` function description, you can explore more advanced usage patterns.
 
 #### Voice Design then Clone
 
@@ -372,7 +367,7 @@ wavs, sr = tokenizer.decode(enc)
 sf.write("decode_output.wav", wavs[0], sr)
 ```
 
-For more tokenizer examples (including different input formats and batch usage), please refer to the [example codes](https://github.com/QwenLM/Qwen3-TTS/blob/main/examples/test_tokenizer_12hz.py). With those examples and the description for `Qwen3TTSTokenizer`, you can explore more advanced usage patterns.
+For more tokenizer examples (including different input formats and batch usage), please refer to the [example codes](https://github.com/RubisetCie/qwen3-text-to-speech/blob/main/examples/test_tokenizer_12hz.py). With those examples and the description for `Qwen3TTSTokenizer`, you can explore more advanced usage patterns.
 
 ### Launch Local Web UI Demo
 
@@ -1337,25 +1332,3 @@ During evaluation, we ran inference for all models with `dtype=torch.bfloat16` a
 </table>
 
 </details>
-
-
-## Citation
-
-If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil: :)
-
-```BibTeX
-@article{Qwen3-TTS,
-  title={Qwen3-TTS Technical Report},
-  author={Hangrui Hu and Xinfa Zhu and Ting He and Dake Guo and Bin Zhang and Xiong Wang and Zhifang Guo and Ziyue Jiang and Hongkun Hao and Zishan Guo and Xinyu Zhang and Pei Zhang and Baosong Yang and Jin Xu and Jingren Zhou and Junyang Lin},
-  journal={arXiv preprint arXiv:2601.15621},
-  year={2026}
-}
-```
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=QwenLM/Qwen3-TTS&type=Date)](https://star-history.com/#QwenLM/Qwen3-TTS&Date)
-
-
-<br>
